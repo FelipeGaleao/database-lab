@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql_lbd
+    environment:
+      MYSQL_USER: root 
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: lbd_default_bd
+      

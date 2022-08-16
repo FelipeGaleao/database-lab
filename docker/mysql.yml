@@ -25,3 +25,9 @@ services:
     restart: always
     ports:
       - "8183:80"
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8184:80"

@@ -7,8 +7,8 @@
 - [x]  Passo 5. Mapear conjuntos de relacionamentos binário M:N.
 - [x]  Passo 6. Mapear Atributos Multivalorados
 - [x]  Passo 7. Mapear conjuntos de relacionamentos n-ários, n > 2
-
-
+- [ ]  
+<br><br>
 **Passo 1 - Entidades fortes**
 
 Pessoa (cpf, pnome, minicial, unome, data_nasc, sexo, rua, numero, numero_ap, cidade, estado_ cep)

@@ -7,7 +7,7 @@
 - [x]  Passo 5. Mapear conjuntos de relacionamentos binário M:N.
 - [x]  Passo 6. Mapear Atributos Multivalorados
 - [x]  Passo 7. Mapear conjuntos de relacionamentos n-ários, n > 2
-- [ ]  
+
 <br><br>
 **Passo 1 - Entidades fortes**
 
@@ -23,7 +23,7 @@ Aluno(cod_aluno, pessoa_cpf, tipo_aluno)
 
 Concessao(titulo, num, agencia, data_inicial)
 
-
+<br><br>
 **Passo 2 - Entidades fracas**
 
 Pessoa (cpf, pnome, minicial, unome, data_nasc, sexo, rua, numero, numero_ap, cidade, estado_ cep)
@@ -46,7 +46,7 @@ Disciplina(num_discip, dnome, ddesc)
 
 Docente(doc_escritorio, nivel, doc_telefone, salario)
 
-
+<br><br>
 **Passo 3 - Relacionamento binário 1:1**
 
 Pessoa (cpf, pnome, minicial, unome, data_nasc, sexo, rua, numero, numero_ap, cidade, estado_ cep)
@@ -69,7 +69,7 @@ Disciplina(num_discip, dnome, ddesc)
 
 Docente(doc_escritorio, nivel, doc_telefone, salario)
 
-
+<br><br>
 **Passo 4 - relacionamentos binário regular 1:N**
 
 Pessoa (cpf, pnome, minicial, unome, data_nasc, sexo, rua, numero, numero_ap, cidade, estado_ cep)
@@ -94,7 +94,7 @@ Docente(cod_concessao, doc_escritorio, nivel, doc_telefone, salario)
 
 Professor_Pesquisador_Ensina(cod_docente, cod_turma)
 
-
+<br><br>
 **Passo 5 - relacionamentos binário M:N.** 
 
 Pessoa (cpf, pnome, minicial, unome, data_nasc, sexo, rua, numero, numero_ap, cidade, estado_ cep)

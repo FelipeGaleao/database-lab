@@ -4,5 +4,10 @@ ALTER TABLE `faculdade` CHANGE `reitor` `reitor` VARCHAR(255) NOT NULL; --- alte
 ALTER TABLE `departamento` ADD `nome_faculdade` VARCHAR(255) NOT NULL AFTER `diretor_cod_docente`; --- adicionar a coluna nome_faculdade na tabela departamento
 
 ALTER TABLE `departamento` ADD CONSTRAINT `departamento_faculdade_fk` FOREIGN KEY (`nome_faculdade`) REFERENCES `faculdade`(`fnome`) ON DELETE RESTRICT ON UPDATE RESTRICT;
---- Criar chave extrangeira para a coluna nome_faculdade da tabela departamento na tabela faculdade com a coluna fnome
+--- Criar chave estrangeira para a coluna nome_faculdade da tabela departamento na tabela faculdade com a coluna fnome
 
+
+ALTER TABLE `docente_departamento` DROP `cod_departamento`; --- excluir a coluna cod_departamento na tabela docente_departamento
+ALTER TABLE `docente_departamento` ADD `dnome_departamento` VARCHAR(255) NOT NULL AFTER `cod_docente`; --- adicionar a coluna dnome_departamento na tabela docente_departamento
+ALTER TABLE `docente_departamento` ADD CONSTRAINT `docente_departamento_fk` FOREIGN KEY (`dnome_departamento`) REFERENCES `departamento`(`dnome`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+-- Criar chave estrangeira para a coluna dnome_departamento da tabela docente_departamento na tabela departamento com a coluna dnome

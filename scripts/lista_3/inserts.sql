@@ -67,3 +67,23 @@ INSERT INTO departamento(dnome, dtelefone, escritorio, diretor_cod_docente, nome
 ('Departamento de Ciências Contábeis', '67991916', 'Departamento de Ciências Contábeis', 17, 'Universidade para o Desenvolvimento de Capivaras - UNIDECAPI'),
 ('Departamento de Engenharia', '67991917', 'Departamento de Engenharia', 18, 'Universidade para o Desenvolvimento de Capivaras - UNIDECAPI');
 
+-- Vincular docente ao departamento
+INSERT INTO docente_departamento(cod_docente_departamento, cod_docente, dnome_departamento) VALUES
+(1, 1, 'Departamento de Administração'),
+(2, 2, 'Departamento de Artes'),
+(3, 3, 'Departamento de Biologia'),
+(4, 4, 'Departamento de Ciências Contábeis'),
+(5, 5, 'Departamento de Computação'),
+(6, 6, 'Departamento de Direito'),
+(7, 7, 'Departamento de Economia'),
+(8, 8, 'Departamento de Educação Física'),
+(9, 9, 'Departamento de Engenharia'),
+(10, 10, 'Departamento de Filosofia'),
+(11, 11, 'Departamento de Física'),
+(12, 12, 'Departamento de Geografia'),
+(13, 13, 'Departamento de História'),
+(14, 14, 'Departamento de Letras'),
+(15, 15, 'Departamento de Matemática'),
+(16, 16, 'Departamento de Psicologia'),
+(17, 17, 'Departamento de Química'),
+(18, 18, 'Departamento de Sociologia');

@@ -139,3 +139,15 @@ INSERT INTO pessoa(cpf, pnome, minicial, unome, sexo, data_nasc, rua, cidade, es
 
 INSERT INTO aluno(cod_aluno, pessoa_cpf, tipo_aluno, departamento_principal, departamento_secundario) VALUES
 (8, 26, 'Graduação', 'Departamento de Computação', 'Departamento de Matemática');
+
+INSERT INTO pessoa(cpf, pnome, minicial, unome, sexo, data_nasc, rua, cidade, estado, cep, numero_ap, numero) VALUES
+(27, 'Ricardo', 'I', 'Silva', 'M', '1990-01-01', 'Rua 9', 'Cidade 9', 'Estado 9', '12345678', '9', '9');
+
+INSERT INTO aluno(cod_aluno, pessoa_cpf, tipo_aluno, departamento_principal, departamento_secundario) VALUES
+(9, 27, 'Graduação', 'Departamento de Computação', 'Departamento de Matemática');
+
+INSERT INTO pessoa(cpf, pnome, minicial, unome, sexo, data_nasc, rua, cidade, estado, cep, numero_ap, numero) VALUES
+(28, 'Roberta', 'J', 'Silva', 'F', '1990-01-01', 'Rua 10', 'Cidade 10', 'Estado 10', '12345678', '10', '10');
+
+INSERT INTO aluno(cod_aluno, pessoa_cpf, tipo_aluno, departamento_principal, departamento_secundario) VALUES
+(10, 28, 'Graduação', 'Departamento de Computação', 'Departamento de Matemática');

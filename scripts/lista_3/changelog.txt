@@ -1,0 +1,8 @@
+
+ALTER TABLE `departamento` DROP `faculdade_fturma`; --- excluir a coluna faculdade_fturma
+ALTER TABLE `faculdade` CHANGE `reitor` `reitor` VARCHAR(255) NOT NULL; --- alterar o tipo da coluna reitor para varchar(255)
+ALTER TABLE `departamento` ADD `nome_faculdade` VARCHAR(255) NOT NULL AFTER `diretor_cod_docente`; --- adicionar a coluna nome_faculdade na tabela departamento
+
+ALTER TABLE `departamento` ADD CONSTRAINT `departamento_faculdade_fk` FOREIGN KEY (`nome_faculdade`) REFERENCES `faculdade`(`fnome`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+--- Criar chave extrangeira para a coluna nome_faculdade da tabela departamento na tabela faculdade com a coluna fnome
+

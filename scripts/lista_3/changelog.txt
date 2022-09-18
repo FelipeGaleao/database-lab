@@ -11,3 +11,49 @@ ALTER TABLE `docente_departamento` DROP `cod_departamento`; --- excluir a coluna
 ALTER TABLE `docente_departamento` ADD `dnome_departamento` VARCHAR(255) NOT NULL AFTER `cod_docente`; --- adicionar a coluna dnome_departamento na tabela docente_departamento
 ALTER TABLE `docente_departamento` ADD CONSTRAINT `docente_departamento_fk` FOREIGN KEY (`dnome_departamento`) REFERENCES `departamento`(`dnome`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 -- Criar chave estrangeira para a coluna dnome_departamento da tabela docente_departamento na tabela departamento com a coluna dnome
+
+
+ALTER TABLE `banca` DROP `cod_banca`; -- remover coluna cod_banca, pois estava com chave primária 
+
+ALTER TABLE `banca` ADD `cod_banca` INT NULL AFTER `cod_alunoposgraduacao`; -- adicionar coluna cod_banca permitindo multiplas tuplas com o mesmo valor 
+
+ALTER TABLE `banca` ADD `id_banca` INT NOT NULL AFTER `cod_banca`;
+
+ALTER TABLE `banca` ADD INDEX(`id_banca`);
+
+DROP TABLE ` professor_pesquisador_ensina ` -- não existe essa tabela, houve confusão 
+
+DROP TABLE ` professor_pesquisa_ensina ` -- também não existe essa tabela, houve confusão
+
+
+-- Criado tabela concessão, concessão_apoio_professor, professor_pesquisador e docente_ensina_turma
+
+CREATE TABLE concessao(
+    cod_concessao int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    titulo VARCHAR(255) NOT NULL,
+    num INT, 
+    agencia VARCHAR(255) NOT NULL,
+    data_inicial DATE NOT NULL
+);
+
+
+CREATE TABLE professor_pesquisador(
+    cod_docente_concessao int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    cod_docente int NOT NULL,
+    cod_concessao int NOT NULL,
+    inicio DATE NOT NULL,
+    tempo INT, 
+    final DATE NOT NULL,
+    CONSTRAINT professor_pesquisador_fk FOREIGN KEY (cod_docente) REFERENCES docente(cod_docente),
+    CONSTRAINT professor_pesquisador_fk2 FOREIGN KEY (cod_concessao) REFERENCES concessao(cod_concessao)
+);
+
+
+CREATE TABLE docente_ensina_turma(
+    cod_docente_ensina_turma INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    cod_docente INT NOT NULL,
+    num_turma INT NOT NULL,
+
+    CONSTRAINT fk_docente_ensina_turma_docente FOREIGN KEY (cod_docente) REFERENCES docente(cod_docente),
+    CONSTRAINT fk_docente_ensina_turma_turma FOREIGN KEY (num_turma) REFERENCES turma(num_turma)
+);
